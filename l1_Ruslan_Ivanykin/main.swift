@@ -54,4 +54,14 @@ deleteExcessNumbersFromArray(&classicArray)
 print(classicArray)
 
 //Задание 5. Урок 2
-
+var febArray: [Int] = [1, 1]
+func createFebArray(_ array: inout [Int]){
+    for i in 2...50 {
+        if i >= 2 {
+            let feb = array[i-2] + array[i-1]
+            array.append(feb)
+        }
+    }
+}
+createFebArray(&febArray)
+print(febArray)
