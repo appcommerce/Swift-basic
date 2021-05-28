@@ -7,45 +7,21 @@
 
 import Foundation
 
-/*
- * Задание 1. Стандартными библиотеками можно пользоваться для степеней и корней?
- */
-let a = -1.0
-let b = 0.0
-let c = 0.0
-let d = pow(b, 2) - (4 * a * c)
+let sportCar = SportCar(model: "Ferrari", issue: 1998, isStarting: false, isOpenWindows: false, isCheepingEngine: false, soundSystem: "Old")
 
-print("Дискриминант \(d)")
-if d < 0 {
-    print("Уравнение не имеет корней")
-}else if d > 0 {
-    let x1 = (-b + sqrt(d))/(2*a)
-    let x2 = (-b - sqrt(d))/(2*a)
-    print("X1: \(x1)")
-    print("X2: \(x2)")
-}else if d == 0 && a != 0{
-    let x = (-b)/(2*a)
-    print("X: \(x)")
-}else {
-    print("a не может быть равно 0")
-}
+let trunkCar = TrunkCar(model: "Kamaz", issue: 2008, isStarting: false, isOpenWindows: false, capacity: 5_000.0, maxCapacity: 12_000.0)
 
-/*
- * Задание 2.
- */
-let i: Double = 4 //Катет 1
-let j: Double = 12 //Катет 2
-let square: Double = 0.5*i*j
-let h = sqrt(pow(i, 2)+pow(j, 2))
-let p = i+j+h
-print("Площадь \(square)")
-print("Гипотенуза \(h)")
-print("Периметр \(p)")
+sportCar.doAction(action: CarActions.startEngine)
+print(sportCar)
+sportCar.doAction(action: CarActions.swapEngine)
+print(sportCar)
+sportCar.doAction(action: CarActions.soundSystem(CarActions.SoundSystems.dinamyc))
+print(sportCar)
 
-/*
- * Задание 3.
- */
-let sum:Double = 120_000
-let percent: Double = 6
-let roi = sum + (sum*(percent/100)*5)
-print("Капитализация вашего счета через 5 лет составит: \(roi)")
+trunkCar.doAction(action: CarActions.startEngine)
+print(trunkCar)
+trunkCar.doAction(action: CarActions.loadTrunk(1236.45))
+print(trunkCar)
+trunkCar.doAction(action: CarActions.unloadTrunk(1236.45))
+print(trunkCar)
+
