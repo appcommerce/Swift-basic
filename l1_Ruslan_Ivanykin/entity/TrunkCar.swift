@@ -7,18 +7,25 @@
 
 import Foundation
 
-class TrunkCar: Car, CustomStringConvertible{
+class TrunkCar: Car{
     var capacity: Double
     var maxCapacity: Double
     
+    var model: String
+    var issue: UInt
+    var isStarting: Bool
+    var isOpenWindows: Bool
     init(model: String, issue: UInt, isStarting: Bool, isOpenWindows: Bool, capacity: Double, maxCapacity: Double) {
         self.capacity = capacity
         self.maxCapacity = maxCapacity
-        super.init(model: model, issue: issue, isStarting: isStarting, isOpenWindows: isOpenWindows)
+        
+        self.model = model
+        self.issue = issue
+        self.isStarting = isStarting
+        self.isOpenWindows = isOpenWindows
     }
     
-    override func doAction(action: CarActions) {
-        super.doAction(action: action)
+    func doAction(action: CarActions) {
         switch action {
         case let .loadTrunk(size):
             self.capacity += size
@@ -29,6 +36,9 @@ class TrunkCar: Car, CustomStringConvertible{
         }
     }
     
+}
+
+extension TrunkCar: CustomStringConvertible{
     var description: String{
         return "Model: \(self.model), Issue: \(self.issue), State engine: \(self.isStarting), State windows: \(self.isOpenWindows), Load now: \(self.capacity), Max load: \(self.maxCapacity)"
     }

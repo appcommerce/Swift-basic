@@ -7,17 +7,25 @@
 
 import Foundation
 
-class SportCar: Car, CustomStringConvertible{
+class SportCar: Car{
     var isCheepingEngine: Bool
     var soundSystem: String
+    
+    var model: String
+    var issue: UInt
+    var isStarting: Bool
+    var isOpenWindows: Bool
     init(model: String, issue: UInt, isStarting: Bool, isOpenWindows: Bool, isCheepingEngine: Bool, soundSystem: String) {
+        self.model = model
+        self.issue = issue
+        self.isStarting = isStarting
+        self.isOpenWindows = isOpenWindows
+        
         self.isCheepingEngine = isCheepingEngine
         self.soundSystem = soundSystem
-        super.init(model: model, issue: issue, isStarting: isStarting, isOpenWindows: isOpenWindows)
     }
     
-    override func doAction(action: CarActions) {
-        super.doAction(action: action)
+    func doAction(action: CarActions) {
         switch action {
         case .swapEngine:
             isCheepingEngine = true
@@ -27,7 +35,8 @@ class SportCar: Car, CustomStringConvertible{
             break
         }
     }
-    
+}
+extension SportCar: CustomStringConvertible{
     var description: String{
         return "Model: \(self.model), Issue: \(self.issue), State engine: \(self.isStarting), State windows: \(self.isOpenWindows), Sound system: \(self.soundSystem), Cheep tuning: \(self.isCheepingEngine)"
     }

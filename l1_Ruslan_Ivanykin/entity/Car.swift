@@ -7,31 +7,25 @@
 
 import Foundation
 
-class Car{
-    let model: String
-    let issue: UInt
-    var isStarting: Bool
-    var isOpenWindows: Bool
+protocol Car{
+    var model: String {get set}
+    var issue: UInt {get set}
+    var isStarting: Bool {get set}
+    var isOpenWindows: Bool {get set}
     
-    init(model: String, issue: UInt, isStarting: Bool, isOpenWindows: Bool) {
-        self.model = model
-        self.isStarting = isStarting
-        self.issue = issue
-        self.isOpenWindows = isOpenWindows
+    func doAction(action: CarActions)
+}
+extension Car{
+    mutating func startEngine(){
+        self.isStarting = true
     }
-    
-    func doAction(action: CarActions){
-        switch action {
-        case .startEngine:
-            isStarting = true
-        case .stopEngine:
-            isStarting = false
-        case .openWindow:
-            isOpenWindows = true
-        case .closeWindow:
-            isOpenWindows = false
-        default:
-            break
-        }
+    mutating func stopEngine() {
+        self.isStarting = false
+    }
+    mutating func openWindow(){
+        self.isOpenWindows = true
+    }
+    mutating func closeWindow(){
+        self.isOpenWindows = false
     }
 }

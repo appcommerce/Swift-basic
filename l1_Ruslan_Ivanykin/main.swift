@@ -7,21 +7,25 @@
 
 import Foundation
 
-let sportCar = SportCar(model: "Ferrari", issue: 1998, isStarting: false, isOpenWindows: false, isCheepingEngine: false, soundSystem: "Old")
+var sportCar = SportCar(model: "Ferrari", issue: 1998, isStarting: false, isOpenWindows: false, isCheepingEngine: false, soundSystem: "Old")
 
-let trunkCar = TrunkCar(model: "Kamaz", issue: 2008, isStarting: false, isOpenWindows: false, capacity: 5_000.0, maxCapacity: 12_000.0)
+var trunkCar = TrunkCar(model: "Kamaz", issue: 2008, isStarting: false, isOpenWindows: false, capacity: 5_000.0, maxCapacity: 12_000.0)
 
-sportCar.doAction(action: CarActions.startEngine)
-print(sportCar)
+sportCar.startEngine()
+print(sportCar.description)
+sportCar.stopEngine()
+print(sportCar.description)
 sportCar.doAction(action: CarActions.swapEngine)
-print(sportCar)
+print(sportCar.description)
 sportCar.doAction(action: CarActions.soundSystem(CarActions.SoundSystems.dinamyc))
-print(sportCar)
+print(sportCar.description)
 
-trunkCar.doAction(action: CarActions.startEngine)
-print(trunkCar)
+trunkCar.startEngine()
+print(trunkCar.description)
+trunkCar.stopEngine()
+print(trunkCar.description)
 trunkCar.doAction(action: CarActions.loadTrunk(1236.45))
-print(trunkCar)
+print(trunkCar.description)
 trunkCar.doAction(action: CarActions.unloadTrunk(1236.45))
-print(trunkCar)
+print(trunkCar.description)
 
