@@ -7,17 +7,21 @@
 
 import Foundation
 
+let sportCar = SportCar(model: "Ferrari", issue: 1998, isStarting: false, isOpenWindows: false, isCheepingEngine: false, soundSystem: "Old")
 
-var lamborghini = SportCar(model: "Aventador", issue: 2000, capacity: 12.0, isStarting: false, isOpenWindows: false, maxCapacity: 12.0)
-var audi = SportCar(model: "R8", issue: 2018, capacity: 12.0, isStarting: false, isOpenWindows: false, maxCapacity: 14.0)
-var freightliner = TrunkCar(model: "eM2", issue: 2020, capacity: 0.0, isStarting: false, isOpenWindows: false, maxCapacity: 33_000.0)
+let trunkCar = TrunkCar(model: "Kamaz", issue: 2008, isStarting: false, isOpenWindows: false, capacity: 5_000.0, maxCapacity: 12_000.0)
 
-print(lamborghini)
-print(audi)
-print(freightliner)
+sportCar.doAction(action: CarActions.startEngine)
+print(sportCar)
+sportCar.doAction(action: CarActions.swapEngine)
+print(sportCar)
+sportCar.doAction(action: CarActions.soundSystem(CarActions.SoundSystems.dinamyc))
+print(sportCar)
 
-lamborghini.startContest(state: CarActions.startEngine)
-audi.startContest(state: CarActions.openWindow)
-freightliner.startContest(state: CarActions.loadTrunk(20_000.0))
-freightliner.startContest(state: CarActions.startEngine)
-freightliner.startContest(state: CarActions.unloadTrunk(34_000.0))
+trunkCar.doAction(action: CarActions.startEngine)
+print(trunkCar)
+trunkCar.doAction(action: CarActions.loadTrunk(1236.45))
+print(trunkCar)
+trunkCar.doAction(action: CarActions.unloadTrunk(1236.45))
+print(trunkCar)
+

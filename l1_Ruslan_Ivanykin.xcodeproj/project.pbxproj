@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3180B82661267600E4C18A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3180B72661267600E4C18A /* Car.swift */; };
 		1F32B69C2650F2730005DCDB /* SportCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32B69B2650F2730005DCDB /* SportCar.swift */; };
 		1F32B6A02650F2E90005DCDB /* TrunkCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32B69F2650F2E90005DCDB /* TrunkCar.swift */; };
 		1F32B6A42650F5A30005DCDB /* CarActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32B6A32650F5A30005DCDB /* CarActions.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F3180B72661267600E4C18A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		1F32B69B2650F2730005DCDB /* SportCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCar.swift; sourceTree = "<group>"; };
 		1F32B69F2650F2E90005DCDB /* TrunkCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkCar.swift; sourceTree = "<group>"; };
 		1F32B6A32650F5A30005DCDB /* CarActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarActions.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 				1F32B69B2650F2730005DCDB /* SportCar.swift */,
 				1F32B69F2650F2E90005DCDB /* TrunkCar.swift */,
 				1F32B6A32650F5A30005DCDB /* CarActions.swift */,
+				1F3180B72661267600E4C18A /* Car.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			files = (
 				1FD03F4A263D82CD004F24F7 /* main.swift in Sources */,
 				1F32B69C2650F2730005DCDB /* SportCar.swift in Sources */,
+				1F3180B82661267600E4C18A /* Car.swift in Sources */,
 				1F32B6A42650F5A30005DCDB /* CarActions.swift in Sources */,
 				1F32B6A02650F2E90005DCDB /* TrunkCar.swift in Sources */,
 			);

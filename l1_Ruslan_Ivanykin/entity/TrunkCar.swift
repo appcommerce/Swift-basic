@@ -7,54 +7,29 @@
 
 import Foundation
 
-struct TrunkCar{
-    let model: String
-    let issue: UInt
+class TrunkCar: Car, CustomStringConvertible{
     var capacity: Double
-    var isStarting: Bool
-    var isOpenWindows: Bool
-    let maxCapacity: Double
+    var maxCapacity: Double
     
-    mutating func startContest(state: CarActions){
-        switch state {
-        case .startEngine:
-            if !isStarting {
-                isStarting = true
-            }else{
-                print("Engine is already started")
-            }
-        case .stopEngine:
-            if isStarting {
-                isStarting = false
-            }else{
-                print("Engine is already stopped")
-            }
-        case .openWindow:
-            if !isOpenWindows {
-                isOpenWindows = true
-            }else{
-                print("Windows are already opened")
-            }
-        case .closeWindow:
-            if isOpenWindows {
-                isOpenWindows = false
-            }else{
-                print("Windows are already closed")
-            }
-        case .loadTrunk(let count):
-            if count <= maxCapacity && count > 0 {
-                capacity = count
-            }
-            else{
-                print("Bad count")
-            }
-        case .unloadTrunk(let count):
-            if count <= capacity {
-                capacity = count
-            }
-            else{
-                print("Bad count")
-            }
+    init(model: String, issue: UInt, isStarting: Bool, isOpenWindows: Bool, capacity: Double, maxCapacity: Double) {
+        self.capacity = capacity
+        self.maxCapacity = maxCapacity
+        super.init(model: model, issue: issue, isStarting: isStarting, isOpenWindows: isOpenWindows)
+    }
+    
+    override func doAction(action: CarActions) {
+        super.doAction(action: action)
+        switch action {
+        case let .loadTrunk(size):
+            self.capacity += size
+        case let .unloadTrunk(size):
+            self.capacity -= size
+        default:
+            break
         }
+    }
+    
+    var description: String{
+        return "Model: \(self.model), Issue: \(self.issue), State engine: \(self.isStarting), State windows: \(self.isOpenWindows), Load now: \(self.capacity), Max load: \(self.maxCapacity)"
     }
 }

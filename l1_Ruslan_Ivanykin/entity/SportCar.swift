@@ -7,54 +7,28 @@
 
 import Foundation
 
-struct SportCar{
-    let model: String
-    let issue: UInt
-    var capacity: Double
-    var isStarting: Bool
-    var isOpenWindows: Bool
-    let maxCapacity: Double
+class SportCar: Car, CustomStringConvertible{
+    var isCheepingEngine: Bool
+    var soundSystem: String
+    init(model: String, issue: UInt, isStarting: Bool, isOpenWindows: Bool, isCheepingEngine: Bool, soundSystem: String) {
+        self.isCheepingEngine = isCheepingEngine
+        self.soundSystem = soundSystem
+        super.init(model: model, issue: issue, isStarting: isStarting, isOpenWindows: isOpenWindows)
+    }
     
-    mutating func startContest(state: CarActions){
-        switch state {
-        case .startEngine:
-            if !isStarting {
-                isStarting = true
-            }else{
-                print("Engine is already started")
-            }
-        case .stopEngine:
-            if isStarting {
-                isStarting = false
-            }else{
-                print("Engine is already stopped")
-            }
-        case .openWindow:
-            if !isOpenWindows {
-                isOpenWindows = true
-            }else{
-                print("Windows are already opened")
-            }
-        case .closeWindow:
-            if isOpenWindows {
-                isOpenWindows = false
-            }else{
-                print("Windows are already closed")
-            }
-        case .loadTrunk(let count):
-            if count <= maxCapacity && count > 0 {
-                capacity = count
-            }
-            else{
-                print("Bad count")
-            }
-        case .unloadTrunk(let count):
-            if count <= capacity {
-                capacity = count
-            }
-            else{
-                print("Bad count")
-            }
+    override func doAction(action: CarActions) {
+        super.doAction(action: action)
+        switch action {
+        case .swapEngine:
+            isCheepingEngine = true
+        case let .soundSystem(sub):
+            self.soundSystem = sub.rawValue
+        default:
+            break
         }
+    }
+    
+    var description: String{
+        return "Model: \(self.model), Issue: \(self.issue), State engine: \(self.isStarting), State windows: \(self.isOpenWindows), Sound system: \(self.soundSystem), Cheep tuning: \(self.isCheepingEngine)"
     }
 }

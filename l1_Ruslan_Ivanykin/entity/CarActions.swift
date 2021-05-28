@@ -14,4 +14,10 @@ enum CarActions{
     case closeWindow
     case loadTrunk(Double)
     case unloadTrunk(Double)
+    case swapEngine
+    case soundSystem(SoundSystems)
+    enum SoundSystems: String {
+        case dinamyc = "Pioneer"
+        case sub = "JBL"
+    }
 }
