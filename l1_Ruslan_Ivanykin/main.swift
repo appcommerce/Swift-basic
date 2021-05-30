@@ -7,25 +7,23 @@
 
 import Foundation
 
-var sportCar = SportCar(model: "Ferrari", issue: 1998, isStarting: false, isOpenWindows: false, isCheepingEngine: false, soundSystem: "Old")
+var myQueue = SwiftQueue<Int>()
+myQueue.add(item: 1)
+myQueue.add(item: 2)
+myQueue.add(item: 3)
+myQueue.add(item: 4)
 
-var trunkCar = TrunkCar(model: "Kamaz", issue: 2008, isStarting: false, isOpenWindows: false, capacity: 5_000.0, maxCapacity: 12_000.0)
+myQueue.items.forEach{ element in
+    print(element)
+}
 
-sportCar.startEngine()
-print(sportCar.description)
-sportCar.stopEngine()
-print(sportCar.description)
-sportCar.doAction(action: CarActions.swapEngine)
-print(sportCar.description)
-sportCar.doAction(action: CarActions.soundSystem(CarActions.SoundSystems.dinamyc))
-print(sportCar.description)
+print(myQueue.poll())
 
-trunkCar.startEngine()
-print(trunkCar.description)
-trunkCar.stopEngine()
-print(trunkCar.description)
-trunkCar.doAction(action: CarActions.loadTrunk(1236.45))
-print(trunkCar.description)
-trunkCar.doAction(action: CarActions.unloadTrunk(1236.45))
-print(trunkCar.description)
+print(myQueue[0])
+myQueue[0] = 1
+print(myQueue[0])
 
+let filteredArray = myQueue.filteredByDelimiter(){ delimiter in
+    return delimiter % 2 == 0
+}
+print(filteredArray)

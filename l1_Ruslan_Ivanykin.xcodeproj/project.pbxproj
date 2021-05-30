@@ -11,6 +11,7 @@
 		1F32B69C2650F2730005DCDB /* SportCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32B69B2650F2730005DCDB /* SportCar.swift */; };
 		1F32B6A02650F2E90005DCDB /* TrunkCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32B69F2650F2E90005DCDB /* TrunkCar.swift */; };
 		1F32B6A42650F5A30005DCDB /* CarActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32B6A32650F5A30005DCDB /* CarActions.swift */; };
+		1F8B0A6226621C3600B8FF4A /* SwiftQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B0A6126621C3600B8FF4A /* SwiftQueue.swift */; };
 		1FD03F4A263D82CD004F24F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD03F49263D82CD004F24F7 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		1F32B69B2650F2730005DCDB /* SportCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCar.swift; sourceTree = "<group>"; };
 		1F32B69F2650F2E90005DCDB /* TrunkCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkCar.swift; sourceTree = "<group>"; };
 		1F32B6A32650F5A30005DCDB /* CarActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarActions.swift; sourceTree = "<group>"; };
+		1F8B0A6126621C3600B8FF4A /* SwiftQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftQueue.swift; sourceTree = "<group>"; };
 		1FD03F46263D82CD004F24F7 /* l1_Ruslan_Ivanykin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = l1_Ruslan_Ivanykin; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD03F49263D82CD004F24F7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +55,7 @@
 				1F32B69F2650F2E90005DCDB /* TrunkCar.swift */,
 				1F32B6A32650F5A30005DCDB /* CarActions.swift */,
 				1F3180B72661267600E4C18A /* Car.swift */,
+				1F8B0A6126621C3600B8FF4A /* SwiftQueue.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FD03F4A263D82CD004F24F7 /* main.swift in Sources */,
+				1F8B0A6226621C3600B8FF4A /* SwiftQueue.swift in Sources */,
 				1F32B69C2650F2730005DCDB /* SportCar.swift in Sources */,
 				1F3180B82661267600E4C18A /* Car.swift in Sources */,
 				1F32B6A42650F5A30005DCDB /* CarActions.swift in Sources */,
